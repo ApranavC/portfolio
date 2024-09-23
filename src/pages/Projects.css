@@ -1,0 +1,89 @@
+/* Projects Section */
+.projects-section {
+  padding: 60px 20px;
+  background-color: #F5F5F5;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #0D47A1; /* Primary color */
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background-color: #FFFFFF; /* Card background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.1rem;
+  color: #212529; /* Text color */
+  text-align: left;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  color: #0D47A1; /* Primary color */
+  margin-bottom: 10px;
+}
+
+.project-card .tagline {
+  font-size: 1.1rem;
+  color: #6c757d; /* Secondary color for taglines */
+  margin-bottom: 15px;
+}
+
+.project-card a {
+  color: #1E88E5; /* Accent color */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+.more-info-btn {
+  background-color: #0D47A1; /* Primary color */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.more-info-btn:hover {
+  background-color: #1976D2; /* Hover color */
+}
+
+.project-description {
+  margin-top: 15px;
+  color: #212529;
+  font-size: 1.1rem;
+  background-color: #F9F9F9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr; /* Single column for small screens */
+  }
+
+  .project-card {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
