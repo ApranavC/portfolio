@@ -1,77 +1,125 @@
-/* Skills Section */
+/* Dark Theme Skills Section */
 .skills-section {
-  padding: 50px 20px;
-  background-color: #f9f9f9;
-  text-align: center;
+  padding: var(--space-3xl) 0;
+  background: var(--bg-secondary);
+  min-height: 100vh;
+  padding-top: 120px; /* Account for fixed navbar */
 }
 
-.skills-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #007bff;
+.skills-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-2xl);
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .skill-category {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  background: var(--gradient-card);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-700);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Hover effect with smooth background color change */
-.skill-category:hover {
-  transform: translateY(-10px);
-  background-color: #007bff; /* Blue background on hover */
-  color: white;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+.skill-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform var(--transition-normal);
 }
 
-.skill-category:hover h3, 
-.skill-category:hover li {
-  color: white; /* Change text color on hover */
+.skill-category:hover::before {
+  transform: scaleX(1);
 }
 
 .skill-category h3 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 15px;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+  text-align: center;
 }
 
-.skill-category ul {
-  list-style-type: none;
-  padding: 0;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--space-md);
 }
 
-.skill-category ul li {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #555;
-  transition: color 0.3s ease;
+.skill-item {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid var(--gray-700);
+  transition: all var(--transition-fast);
+  cursor: pointer;
 }
 
-.skill-category ul li:hover {
-  color: #ffdf00; /* Yellow color on text hover */
+.skill-item:hover {
+  background: var(--gradient-primary);
+  color: var(--text-inverse);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
-/* Force single row layout on larger screens */
-@media (min-width: 1366px) {
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: var(--space-2xl) 0;
+    padding-top: 100px;
+  }
+  
   .skills-container {
-    grid-template-columns: repeat(5, 1fr); /* Display all 5 sections in one row */
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  
+  .skill-category {
+    padding: var(--space-xl);
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--space-sm);
+  }
+  
+  .skill-item {
+    padding: var(--space-sm);
+    font-size: var(--text-xs);
   }
 }
 
-/* Responsive Styling for smaller screens */
-@media (max-width: 768px) {
-  .skills-container {
+@media (max-width: 480px) {
+  .skills-header {
+    font-size: var(--text-3xl);
+  }
+  
+  .skills-grid {
     grid-template-columns: 1fr;
   }
 }

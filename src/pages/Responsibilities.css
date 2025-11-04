@@ -1,12 +1,12 @@
-/* Dark Theme Achievements Section */
-.achievements-section {
+/* Dark Theme Responsibilities Section */
+.responsibilities-section {
   padding: var(--space-3xl) 0;
   background: var(--bg-primary);
   min-height: 100vh;
   padding-top: 120px; /* Account for fixed navbar */
 }
 
-.achievements-header {
+.responsibilities-header {
   text-align: center;
   margin-bottom: var(--space-3xl);
   font-size: var(--text-4xl);
@@ -17,7 +17,7 @@
   background-clip: text;
 }
 
-.achievements-grid {
+.responsibilities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--space-2xl);
@@ -25,7 +25,7 @@
   margin: 0 auto;
 }
 
-.achievement-card {
+.responsibility-card {
   background: var(--gradient-card);
   padding: var(--space-2xl);
   border-radius: var(--radius-2xl);
@@ -40,7 +40,7 @@
   text-align: center;
 }
 
-.achievement-card::before {
+.responsibility-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -52,40 +52,54 @@
   transition: transform var(--transition-normal);
 }
 
-.achievement-card.primary::before {
+.responsibility-card.primary::before {
   background: var(--gradient-primary);
 }
 
-.achievement-card.secondary::before {
+.responsibility-card.secondary::before {
   background: var(--gradient-secondary);
 }
 
-.achievement-card.accent::before {
+.responsibility-card.accent::before {
   background: var(--gradient-accent);
 }
 
-.achievement-card:hover::before {
+.responsibility-card:hover::before {
   transform: scaleX(1);
 }
 
-.achievement-icon {
+.responsibility-icon {
   font-size: var(--text-6xl);
   margin-bottom: var(--space-lg);
   transition: all var(--transition-normal);
 }
 
-.achievement-content {
+.responsibility-content {
   flex: 1;
 }
 
-.achievement-title {
+.responsibility-title {
   font-size: var(--text-xl);
   font-weight: 600;
   color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.responsibility-organization {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-bottom: var(--space-xs);
+}
+
+.responsibility-period {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  font-style: italic;
   margin-bottom: var(--space-md);
 }
 
-.achievement-description {
+.responsibility-description {
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: var(--leading-relaxed);
@@ -93,43 +107,27 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .achievements-section {
-    padding: var(--space-2xl) 0;
-    padding-top: 100px;
+  .responsibilities-section {
+    padding: 60px 20px;
   }
-  
-  .achievements-header {
-    font-size: var(--text-3xl);
+
+  .responsibilities-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
   }
-  
-  .achievements-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
-  }
-  
-  .achievement-card {
-    padding: var(--space-xl);
-  }
-  
-  .achievement-icon {
-    font-size: var(--text-5xl);
-  }
-  
-  .achievement-title {
-    font-size: var(--text-lg);
+
+  .responsibility-item {
+    padding: 20px;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .achievements-header {
-    font-size: var(--text-2xl);
+  .responsibilities-section {
+    padding: 40px 15px;
   }
-  
-  .achievement-card {
-    padding: var(--space-lg);
-  }
-  
-  .achievement-icon {
-    font-size: var(--text-4xl);
+
+  .responsibility-item {
+    padding: 15px;
   }
 }

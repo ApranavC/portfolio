@@ -1,29 +1,216 @@
-/* Navbar Styles */
-nav {
-    background-color: #333;
-    color: #fff;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+/* Dark Theme Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gray-700);
+  z-index: 1000;
+  padding: var(--space-md) 0;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar-logo {
+  flex-shrink: 0;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 800;
+  font-size: var(--text-xl);
+}
+
+.logo-text {
+  color: var(--text-primary);
+}
+
+.logo-dot {
+  color: var(--primary-color);
+  font-size: var(--text-2xl);
+}
+
+/* Desktop Navigation */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.navbar-link {
+  position: relative;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  text-decoration: none;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.navbar-link:hover {
+  color: var(--primary-color);
+  background-color: var(--bg-tertiary);
+}
+
+.navbar-link.active {
+  color: var(--primary-color);
+  background-color: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: var(--radius-full);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.mobile-menu-button:hover {
+  background-color: var(--bg-tertiary);
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  width: 24px;
+  height: 18px;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--text-primary);
+  border-radius: 1px;
+  transition: all var(--transition-fast);
+  transform-origin: center;
+}
+
+.hamburger span:nth-child(1) {
+  margin-bottom: 6px;
+}
+
+.hamburger span:nth-child(2) {
+  margin-bottom: 6px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Dark Theme Mobile Navigation */
+.mobile-menu {
+  display: none;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--gray-700);
+  padding: var(--space-lg);
+  overflow: hidden;
+}
+
+.mobile-navbar-link {
+  display: block;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: var(--text-base);
+  text-decoration: none;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--gray-700);
+  transition: color var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mobile-navbar-link:hover {
+  color: var(--primary-color);
+}
+
+.mobile-navbar-link.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.mobile-navbar-link:last-child {
+  border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
   }
   
-  nav ul {
-    display: flex;
-    gap: 20px;
+  .mobile-menu-button {
+    display: block;
   }
   
-  nav a {
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  .mobile-menu {
+    display: block;
   }
   
-  nav a:hover {
-    color: #007bff;
+  .navbar-container {
+    padding: 0 var(--space-md);
   }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: var(--space-sm) 0;
+  }
+  
+  .navbar-container {
+    padding: 0 var(--space-sm);
+  }
+  
+  .logo-link {
+    font-size: var(--text-lg);
+  }
+  
+  .mobile-menu {
+    padding: var(--space-md);
+  }
+}
   
