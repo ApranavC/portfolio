@@ -197,7 +197,8 @@ const TechDemo = () => {
 
       case 'about':
         newOutput.push({ type: 'success', text: '👨‍💻 About Pranav:' });
-        newOutput.push({ type: 'info', text: '  Currently pursuing Integrated Master\'s in Physics at NIT Surat.' });
+        newOutput.push({ type: 'info', text: '  Currently working as Product Solution Engineer at VideoSDK (Zujo Tech Pvt Ltd).' });
+        newOutput.push({ type: 'info', text: '  Pursuing Integrated Master\'s in Physics at NIT Surat.' });
         newOutput.push({ type: 'info', text: '  Passionate about technology, research, and building scalable solutions.' });
         newOutput.push({ type: 'info', text: '  Experienced in data analysis, full-stack development, and leadership.' });
         break;
@@ -440,7 +441,8 @@ const TechDemo = () => {
                         backgroundColor: 'transparent',
                         border: 'none',
                         outline: 'none',
-                        boxShadow: 'none'
+                        boxShadow: 'none',
+                        color: '#00ff00'
                       }}
                     />
                     {userInput && (

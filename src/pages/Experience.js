@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const experiences = [
   {
     role: 'Product Solution Engineer',
-    company: 'VideoSDK.live',
+    company: 'VideoSDK (Zujo Tech Pvt Ltd)',
     duration: 'Dec 2024 - Present',
     location: 'Surat, India',
     type: 'Full-time',

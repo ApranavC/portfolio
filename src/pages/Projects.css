@@ -69,6 +69,8 @@
   gap: var(--space-2xl);
   max-width: 1200px;
   margin: 0 auto;
+  align-items: start;
+  perspective: 1000px;
 }
 
 /* Project Card */
@@ -81,6 +83,11 @@
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
+  height: fit-content;
+  align-self: start;
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .project-card::before {
@@ -224,6 +231,7 @@
   padding-top: var(--space-lg);
   border-top: 1px solid var(--gray-700);
   overflow: hidden;
+  display: block;
 }
 
 .project-description p {

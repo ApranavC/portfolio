@@ -23,15 +23,27 @@ function App() {
   }, []);
 
   const pageVariants = {
-    initial: { opacity: 0, y: 20 },
-    in: { opacity: 1, y: 0 },
-    out: { opacity: 0, y: -20 }
+    initial: { 
+      opacity: 0, 
+      y: 30,
+      scale: 0.98
+    },
+    in: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1
+    },
+    out: { 
+      opacity: 0, 
+      y: -30,
+      scale: 0.98
+    }
   };
 
   const pageTransition = {
     type: "tween",
-    ease: "anticipate",
-    duration: 0.5
+    ease: [0.23, 1, 0.32, 1],
+    duration: 0.6
   };
 
   if (isLoading) {
@@ -45,24 +57,48 @@ function App() {
         <div className="loading-content">
           <motion.div
             className="loading-logo"
-            initial={{ scale: 0, rotate: -180 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            initial={{ scale: 0, rotate: -180, opacity: 0 }}
+            animate={{ scale: 1, rotate: 0, opacity: 1 }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 200, 
+              damping: 15,
+              opacity: { duration: 0.5 }
+            }}
           >
-            <span className="logo-text">Pranav</span>
-            <span className="logo-dot">.</span>
+            <motion.span 
+              className="logo-text"
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
+            >
+              Pranav
+            </motion.span>
+            <motion.span 
+              className="logo-dot"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ 
+                delay: 0.6, 
+                type: "spring",
+                stiffness: 300,
+                damping: 10
+              }}
+            >
+              .
+            </motion.span>
           </motion.div>
           <motion.div
             className="loading-spinner"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.7, duration: 0.5, ease: "easeOut" }}
           />
           <motion.p
             className="loading-text"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 0.9, duration: 0.5, ease: "easeOut" }}
           >
             Loading Portfolio...
           </motion.p>

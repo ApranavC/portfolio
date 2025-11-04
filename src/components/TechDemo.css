@@ -248,6 +248,7 @@
   background-color: transparent !important;
   border: none !important;
   color: #00ff00 !important;
+  -webkit-text-fill-color: #00ff00 !important;
   font-family: var(--font-family-mono);
   font-size: var(--text-sm);
   outline: none !important;
@@ -262,8 +263,6 @@
   appearance: none !important;
   min-width: 200px;
   width: auto;
-  -webkit-background-clip: text;
-  background-clip: text;
 }
 
 .terminal-input-field::placeholder {
@@ -276,6 +275,11 @@
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
+  color: #00ff00 !important;
+}
+
+.terminal-input-field:active {
+  color: #00ff00 !important;
 }
 
 .terminal-input-field:-webkit-autofill,
